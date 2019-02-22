@@ -1,0 +1,253 @@
+.modal {
+    /* This way it could be display flex or grid or whatever also. */
+    display: block;
+
+    /* Probably need media queries here */
+    width: 600px;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 100%;
+
+    position: fixed;
+
+    z-index: 100;
+    overflow: auto;
+    left: 50%;
+    top: 50%;
+
+    /* Use this for centering if unknown width/height */
+    transform: translate(-50%, -50%);
+
+    /* If known, negative margins are probably better (less chance of blurry text). */
+    /* margin: -200px 0 0 -200px; */
+
+    background: white;
+    border: 1px solid #999;
+    border-radius: 10px;
+}
+
+.closed {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-guts {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*overflow: auto;*/
+    padding: 20px 50px 20px 20px;
+}
+
+
+
+
+ul {
+    margin: 10px 0 10px 30px;
+}
+
+li,
+p {
+    margin: 0 0 10px 0;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+}
+
+.modal .close-button {
+    position: absolute;
+
+    /* don't need to go crazy with z-index here, just sits over .modal-guts */
+    z-index: 1;
+
+    top: 10px;
+
+    /* needs to look OK with or without scrollbar */
+    right: 20px;
+
+    border: 0;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+}
+
+.open-button {
+    border: 0;
+    background: lightgreen;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 21px;
+}
+
+label {
+    display: block;
+}
+
+label#remlabel {
+    display: inline;
+}
+
+input {
+    width: 80%;
+    margin-bottom: 0.5em;
+}
+
+input#remember {
+    width: auto;
+}
+
+modal p {
+    margin-bottom: 1em;
+}
+
+.actionlink,
+.replylink {
+    color: orange;
+}
+
+.parentcomment,
+.child-comment {
+    background: #f4f4f4;
+    margin: 0 0 3px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 83%;
+}
+
+.child-comment {
+    background: white;
+    border: solid 1px #eeeeee;
+}
+
+.replies {
+    padding-left: 40px;
+}
+
+.comment .author {
+    font-weight: bold;
+    float: left;
+    margin-right: 1em;
+}
+
+.commenttime {
+    color: #999999;
+    font-size: 83%;
+}
+
+[username]:hover:before {
+    content: attr(username);
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-weight: normal;
+    padding: 1px 5px;
+    border-radius: 5px;
+    text-align: center;
+    top: 120%;
+    left: 40%;
+}
+
+[username]:hover:after {
+    position: absolute;
+    width: 0;
+    content: " ";
+    border-bottom: 5px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    left: 40%;
+    top: 100%;
+    z-index: 2;
+    line-height: 0;
+    margin-left: 10px;
+
+}
+
+[username] {
+    position: relative;
+}
+
+.commentform button {
+    background-color: #dddddd;
+    border-radius: 5px;
+    border: 1px solid #bbbbbb;
+    font-size: 69%;
+}
+
+.comment .commentform {
+    padding-left: 40px;
+}
+
+div.ta {
+    position: relative;
+}
+
+.commentform textarea {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    resize: none;
+    border-style: solid;
+    border-width: 5px;
+
+}
+
+div.ta pre,
+.commentform textarea {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #cccccc;
+    padding: 2px;
+    font-size: 83%;
+    width: 100%;
+}
+
+div.ta pre {
+    color: red;
+    font-family: mrs-eaves, serif;
+    white-space: pre-wrap;
+    color: transparent;
+    min-height: calc(2.4em + 8px);
+}
+
+div.replylink {
+    margin: 0;
+    margin-top: 3px;
+    border: solid 1px #eeeeee;
+    border-radius: 10px;
+    margin-left: 40px;
+    padding: 0;
+    line-height: 60%;
+
+}
+
+a.replylink {
+    font-size: 69%;
+    margin-left: 10px;
+
+}
+
+
+
+.comment {
+    margin-bottom: 3px;
+}

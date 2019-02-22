@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- htmllint id-class-style ="false" -->
+<html lang="sv-SE">
+
+<head>
+    <meta charset="utf-8">
+    <title>Comment templates</title>
+</head>
+
+<body>
+    <template id="comment-status-template">
+        <div id="nonloggedinstatus" class="closed">
+            <a id="loginlink" class="actionlink">Logga in</a> eller
+            <a id="newaccountlink" class="actionlink">skapa nytt konto</a> för att kommentera.
+        </div>
+        <div id="loggedinstatus" class="closed">
+            Inloggad som <span id="username"></span>. <a id="logoutlink" class="actionlink">Logga ut</a>
+        </div>
+        <section id="comments"></section>
+        <form id="maincommentform" class="commentform closed">
+            <div class="ta">
+                <pre><span></span><br></pre>
+                <textarea name="content" placeholder="Skriv en kommentar" required></textarea>
+            </div>
+            <button>Skicka kommentar</button>
+        </form>
+    </template>
+    <template id="modal-template">
+        <div class="modal-overlay closed" id="modal-overlay"></div>
+        <div class="modal closed" id="modal">
+            <button id="close-button" class="close-button">Stäng</button>
+            <div class="modal-guts" id="modal-guts"></div>
+        </div>
+    </template>
+    <template id="new-account-form-template">
+        <h1 class="modal-head">Skapa nytt konto</h1>
+        <form id="new-account-form">
+            <p>Du får gärna kommentera här men inte utan en verifierad mejladress. Mejladressen kommer aldrig att synas utåt och vi lovar på heder och samvete att aldrig sprida den vidare. När du har registrerat dig här så mejlar vi dig en länk för att verifiera din mejladress. För att hålla dig inloggad använder vi så kallade kakor (http cookies), du är härmed informerad.</p>
+            <div>
+                <label for="screenname">Visningsnamn (namnet som andra ser):</label>
+                <input type="text" id="screenname" name="screenname" pattern="^(?:[A-Za-z0-9\u00C0-\u00FF]+[' ]?)*$" minlength="2" maxlength="30" required>
+            </div>
+            <div>
+                <label for="uname">Användarnamn (bokstäver, siffror och _, inga mellanrum)</label>
+                <input type="text" id="uname" name="username" minlength="4" maxlength="30" pattern="^[\w\u00C0-\u00FF]+$" required>
+            </div>
+            <div>
+                <label for="email">Epost (aldrig synligt för andra användare, verifieras)</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="pwd">Lösenord (minst 5 tecken men annars fritt)</label>
+                <input type="password" id="pwd" name="password" minlength="5" maxlength="200" required>
+            </div>
+            <div>
+                <label for="pwd2">Bekräfta lösenord (you know the drill)</label>
+                <input type="password" id="pwd2" name="pwd2" minlength="5" maxlength="200" required>
+            </div>
+            <div>
+                <button>Skapa konto</button>
+            </div>
+        </form>
+    </template>
+    <template id="login-template">
+        <h1 class="modal-head">Logga in</h1>
+        <form id="login-form">
+            <div>
+                <label for="cred">Användarnamn eller mejladress</label>
+                <input type="text" id="cred" name="cred" minlength="4" maxlength="50" required>
+            </div>
+            <div>
+                <label for="loginpwd">Lösenord</label>
+                <input type="password" id="loginpwd" name="password" minlength="5" maxlength="200" required>
+            </div>
+            <div>
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember" id="remlabel">Kom ihåg mig</label>
+            </div>
+            <div>
+                <button>Logga in</button>
+            </div>
+            <p>Glömt lösenord?</p>
+        </form>
+    </template>
+    <template id="comment-template">
+        <article class="comment">
+            <section class="parentcomment">
+                <div class="commenttime"></div>
+                <div class="author"></div>
+                <section class="commenttext"></section>
+            </section>
+            <section class="replies">
+            </section>
+            <div class="replylink closed"><a class="replylink">Svara</a></div>
+            <form class="commentform closed">
+                <input type="hidden" name="parent">
+                <div class="ta">
+                    <pre><span></span><br></pre>
+                    <textarea name="content" placeholder="Skriv ett svar" required></textarea>
+                </div>
+                <button>Skicka svar</button>
+            </form>
+        </article>
+    </template>
+    <template id="child-comment-template">
+        <article class="comment child-comment">
+            <div class="commenttime"></div>
+            <div class="author"></div>
+            <section class="commenttext"></section>
+        </article>
+    </template>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.comment {
+  color: blue;
+}
+.comment__button {
+  font-size: 18px;
+}
+.comment__input {
+  color: red;
+}
+.comment__input--orange {
+  color: orange;
+}
+
+/*# sourceMappingURL=bemtest.css.map */

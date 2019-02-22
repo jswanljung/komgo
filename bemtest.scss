@@ -1,0 +1,15 @@
+.comment {
+    color: blue;
+
+    &__button {
+        font-size: 18px;
+    }
+
+    &__input {
+        color: red;
+
+        &--orange {
+            color: orange;
+        }
+    }
+}

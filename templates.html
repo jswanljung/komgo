@@ -1,0 +1,32 @@
+<template id="comment-status-template">
+<a id="loginlink" class="actionlink">Logga in</a> eller 
+<a id="newaccountlink" class="actionlink">skapa nytt konto</a> för att kommentera.
+</template>
+
+<template id="modal-template">
+<div class="modal-overlay closed" id="modal-overlay"></div>
+<div class="modal closed" id="modal"><button id="close-button" class="close-button">Stäng</button><div class="modal-guts" id="modal-guts">Hej på dig polarn!<h1 class="modal-head" id="modal-head"></h1></div></div>
+</template>
+
+<template id="new-account-form-template"
+<form id="new-account-form">
+	<div>
+		<label for="name">Användarnamn (det som andra ser):</label>
+		<input type="text" id="name" name="user_name" required>
+	</div>
+	<div>
+		<label for="epost">Epost:</label>
+		<input type="email" id="epost" name="email" required>
+	</div>
+	<div>
+		<label for="pwd">Lösenord:</label>
+		<input type="password" id="pwd" name="pwd" required>
+	</div><div>
+		<label for="pwd2">Bekräfta lösenord:</label>
+		<input type="password" id="pwd2" name="pwd2" required>
+	</div>
+	<div>
+		<button>Skapa konto</button>
+	</div>
+</form>
+</template>
